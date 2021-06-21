@@ -1,0 +1,54 @@
+version: "3.2"
+services:
+  react:
+    build:
+      context: ./services/front-main
+      dockerfile: ./Dockerfile
+    image: front
+    ports:
+      - "3000:80"
+    container_name: client-app
+  nodejs:
+    build:
+      context: ./services/back-main
+    image: back
+    restart: always
+    depends_on:
+      - mysql
+    networks:
+      - backend
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_USER=alex
+      - MYSQL_PASS=alex
+      - MYSQL_DB=company
+    ports:
+      - "9000:9000"
+    container_name: moe-nodejs-app
+  mysql:
+    image: mysql:8.0
+    volumes:
+      - ./services/back-main/dump:/docker-entrypoint-initdb.d
+    networks:
+      - backend
+    environment:
+      - MYSQL_ROOT_PASSWORD=root1
+      - MYSQL_USER=alex
+      - MYSQL_PASSWORD=alex
+      - MYSQL_DATABASE=company
+    container_name: moe-mysql-app
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    depends_on:
+      - mysql
+    networks:
+      - backend
+    ports:
+      - "30002:80"
+    environment:
+      - PMA_HOST=moe-mysql-app
+      - PMA_PORT= 3306
+    container_name: moe-phpmyadmin-app
+networks:
+  backend:
+  

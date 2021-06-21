@@ -1,0 +1,127 @@
+.profile {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.text_info {
+    font-size: 20px;
+    color: #0A5061;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+.full_name {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.specialty {
+    color: #308EA6;
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+
+.profile_change_form{
+    display: flex;
+    flex-direction: column;
+    min-width: 500px;
+    max-width: 1200px;
+}
+
+
+.profile_change_form > input,
+.profile_change_form > button,
+.profile_change_form > select {
+    margin-top: 15px;
+    padding: 5px;
+    outline: none;
+    font-size: 20px;
+}
+
+.profile_change_form > input:first-child {
+    margin-top: 0;
+}
+
+.profile_change_form > div {
+    margin-top: 10px;
+}
+.profile_change_form input[type=checkbox] {
+    transform: scale(4.0);
+    margin-left: 10px;
+    cursor: pointer;
+    box-shadow: none;
+}
+.profile_change_form > div > span {
+    font-size: 20px;
+    line-height: 25px;
+    color: #0A5061;
+}
+
+.profile_btns {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile_btns > a,
+.profile_btns > button {
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+}
+
+.avatar_wrapper {
+    width: 300px;
+    height: 400px;
+    margin-right: 30px;
+}
+
+.file_choicer {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.file_choicer_style {
+    display: block;
+    width: 100%;
+    background-color: #1A4D59;
+    color: #D6DDDF;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    opacity: 0;
+    cursor: pointer;
+}
+.file_choicer_style:hover {
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
+.back_btn {
+    color: #308EA6;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: inline-block;
+}
+.back_btn:hover {
+    text-decoration: #308EA6 solid underline;
+}
+
+.change_actions {
+    display: flex;
+    justify-content: space-between;
+}
+.back_btn:active {
+    color: #0A5061;
+    text-decoration: #0A5061 solid underline;
+}

@@ -1,0 +1,53 @@
+.project_info {
+    padding: 20px 20px 0 20px;
+}
+.project_info_content {
+    display: flex;
+    justify-content: space-between;
+}
+.project_title {
+    text-align: center;
+    font-size: 60px;
+    line-height: 70px;
+    color: #0A5061;
+    padding: 20px 50px 50px 50px;
+    font-weight: 400;
+}
+.project_description {
+    color: #0A5061;
+    display: block;
+    width: 70%;
+    padding: 20px;
+    font-size: 20px;
+    text-align: justify;
+    white-space: pre-line;
+}
+.project_lead {
+    padding: 20px;
+    color: #0A5061;
+    background-color: #D6DDDF;
+}
+.project_lead > div > a {
+    width: 100%;
+}
+
+.project_lead h2 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 30px;
+}
+.project_actions {
+    padding-top: 50px;
+}
+.project_actions > button,
+.project_actions > a {
+    display: block;
+    width: 80% !important;
+    margin: 20px auto;
+}
+.project_deadline {
+    color: #0A5061;
+    font-size: 20px;
+    padding: 30px 30px 0 30px;
+    font-weight: bold;
+}

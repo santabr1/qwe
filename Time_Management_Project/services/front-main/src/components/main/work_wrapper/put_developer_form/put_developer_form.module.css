@@ -1,0 +1,50 @@
+.developer_put_form {
+    margin: 20px auto;
+    padding: 10px;
+}
+
+input,
+select {
+    padding: 5px;
+    font-size: 20px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+input[type=checkbox] {
+    margin: 15px 0 10px 5px;
+    width: 1%;
+    transform: scale(2.0);
+}
+span {
+    font-size: 20px;
+    line-height: 25px;
+    color: #0A5061;
+}
+
+button {
+    margin-top: 10px;
+    width: 30%;
+}
+
+.developer_put_form_data > div {
+    text-align: left;
+    margin-top: 10px;
+}
+.developer_put_form_data {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-width: 500px;
+    max-width: 1200px;
+}
+
+.developer_put_form_actions {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 20px;
+    padding-top: 20px;
+}

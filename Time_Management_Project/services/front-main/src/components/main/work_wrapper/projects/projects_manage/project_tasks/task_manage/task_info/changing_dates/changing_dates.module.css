@@ -1,0 +1,42 @@
+.change_history {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 35px;
+    color: #0A5061;
+}
+
+.no_results_message {
+    font-size: 25px;
+    color: #0A5061;
+    margin-top: 30px;
+}
+.form {
+    width: 60%;
+    margin: 0 auto;
+}
+.form input,
+.form textarea {
+    font-size: 20px;
+    padding: 5px;
+    color: #0A5061;
+    margin: 10px 0 10px 0;
+}
+.form input {
+    width: 45%;
+}
+.form textarea {
+    width: 100%;
+    resize: none;
+    height: 180px;
+}
+.form_date_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    margin: 10px 0 20px 0;
+}

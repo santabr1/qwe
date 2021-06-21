@@ -1,0 +1,59 @@
+.tm_main_wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.cal {
+    width: 800px;
+    font-size: 20px;
+    margin: 20px;
+}
+
+.cal_act_wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.developer_select {
+    margin: 20px;
+    width: 50%;
+}
+
+.wt_container {
+    border: 2px solid #1A4D59;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.time_container {
+    text-align: center;
+}
+
+.date {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.comment {
+    font-size: 18px;
+}
+
+.task {
+    font-size: 16px ;
+}
+
+.wt_item_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.wt_single_item_wrapper {
+
+}
+
+

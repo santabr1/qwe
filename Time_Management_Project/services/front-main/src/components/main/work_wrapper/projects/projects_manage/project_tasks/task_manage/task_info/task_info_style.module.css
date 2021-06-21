@@ -1,0 +1,70 @@
+.main_wrapper {
+    padding: 40px 20px 20px 40px;
+}
+.main_wrapper > button {
+    width: 200px;
+}
+h1 {
+    color: #0A5061;
+    font-size: 60px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.flex_wrapper {
+    display: flex;
+}
+.flex_content {
+    width: 80%;
+}
+.flex_content div > a {
+    width: 50%;
+}
+.flex_content div > a > div {
+    margin-left: 0;
+    width: 100%;
+}
+.flex_content div > a > div > div > p {
+    margin-bottom: 15px;
+}
+
+.flex_actions {
+    width: 25%;
+    padding: 30px;
+}
+.flex_actions > * {
+    display: block;
+    margin: 10px auto 30px auto;
+    width: 50%;
+    padding: 5px;
+}
+
+.description,
+.results {
+    white-space: pre-line;
+    color: #0A5061;
+    font-size: 20px;
+    text-align: justify;
+    margin: 30px 0 35px 0;
+}
+.results {
+    margin-top: 0;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 30px;
+    color: #0A5061;
+}
+h2 > span {
+    font-weight: 400;
+    color: #308EA6;
+    font-size: 30px;
+}
+
+
+.deadline {
+    font-size: 23px;
+    font-weight: bold;
+    color: #0A5061;
+}

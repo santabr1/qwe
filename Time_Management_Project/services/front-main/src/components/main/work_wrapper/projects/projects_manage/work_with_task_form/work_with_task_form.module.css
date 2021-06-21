@@ -1,0 +1,31 @@
+.work_with_tasks_form {
+    display: flex;
+    flex-direction: column;
+    min-width: 500px;
+    max-width: 1200px;
+}
+.work_with_tasks_form{
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.work_with_tasks_form input,
+.work_with_tasks_form textarea {
+    padding: 5px;
+    font-size: 20px;
+    margin-top: 10px;
+    width: 100%;
+}
+.work_with_tasks_form textarea {
+    resize: none;
+    height: 200px;
+}
+.work_with_tasks_form button {
+    width: 30%;
+    padding: 10px;
+}
+.work_with_tasks_form div {
+    display: flex;
+    padding: 20px 20px 0 20px;
+    justify-content: space-between;
+}

@@ -1,0 +1,68 @@
+.all_notifications_wrapper > button {
+    margin: 20px;
+    width: 300px;
+}
+.add_form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 20px auto;
+}
+.add_form textarea {
+    width: 100%;
+    height: 200px;
+}
+
+.notification_wrapper {
+    margin: 20px 10px;
+    background-color: #C70449;
+    color: #D6DDDF;
+    padding: 10px 20px 10px 20px;
+}
+.notification_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.notification_header > button {
+    width: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #D6DDDF;
+    font-size: 25px;
+}
+.notification_header > button:hover {
+    background-color: #D6DDDF;
+    color: #C70449;
+    transition: 0.2s;
+}
+
+.notification_sender {
+    font-size: 25px;
+}
+.notification_sender > span {
+    font-size: 25px;
+    font-weight: bold;
+    color: #D6DDDF;
+    margin-left: 20px;
+}
+
+.notification_date {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.notification_content {
+    font-size: 20px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    white-space: pre-line;
+}
+
+.error {
+    color: #D6DDDF;
+    margin-bottom: 20px;
+}

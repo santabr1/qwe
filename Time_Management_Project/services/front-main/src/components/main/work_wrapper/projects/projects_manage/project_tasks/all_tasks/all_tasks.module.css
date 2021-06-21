@@ -1,0 +1,72 @@
+.task_item {
+    width: 100%;
+    height: 100%;
+    background-color: #0A5061;
+    color: #D6DDDF;
+    padding: 15px;
+    overflow-y: auto;
+}
+.task_item h2,
+.task_item h3,
+.task_item p {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.task_item h2 {
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 10px;
+    color: #D6DDDF;
+}
+.task_item h3 {
+    font-size: 20px;
+    padding: 10px 0px 30px 0px;
+}
+.task_item h3 span,
+.task_item_planned span,
+.task_item_actual span {
+    color: #308EA6;
+}
+.task_item p {
+    text-align: justify;
+    font-size: 18px;
+}
+.task_item_description {
+    padding-bottom: 15px;
+    font-size: 22px;
+}
+.task_item_planned,
+.task_item_actual {
+    padding-bottom: 5px;
+    font-size: 20px;
+}
+
+.tasks_actions_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+    margin: 30px 0 30px 0;
+}
+
+
+.tasks_actions_wrapper > a {
+    padding: 9px;
+    width: 15%;
+}
+.all_tasks_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 0 20px 0 20px;
+}
+.all_tasks_wrapper > a {
+    width: 32%;
+    height: 400px;
+    margin: 20px 20px 20px 0;
+}
+.all_tasks_wrapper > a:hover {
+    box-shadow: 0 0 10px 3px #308EA6;
+    transition: 0.2s;
+}

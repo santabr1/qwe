@@ -1,0 +1,27 @@
+.tasks_nav {
+    width: 100%;
+}
+
+.tasks_nav > ul {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    font-size: 25px;
+}
+.tasks_nav > ul > a {
+    display: block;
+    width: 35%;
+    padding: 0;
+    background-color: #308EA6;
+}
+.tasks_nav > ul > a li {
+    font-size: 25px;
+    padding: 10px;
+    color: #D6DDDF;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.tasks_nav > ul > a li:hover {
+    background-color: #0A5061;
+}

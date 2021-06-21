@@ -1,0 +1,24 @@
+.auth_form {
+    width: 50%;
+    margin: 100px auto;
+    background-color: #0A5061;
+    padding: 30px;
+}
+
+.auth_form > h1{
+    font-size: 40px;
+    padding: 10px;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    cursor: default;
+    color: #D6DDDF;
+    text-align: center;
+}
+
+.auth_form input {
+    font-size: 25px;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+}

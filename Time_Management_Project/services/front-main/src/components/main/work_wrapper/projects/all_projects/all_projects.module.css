@@ -1,0 +1,69 @@
+.projects_actions_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.projects_actions_wrapper a {
+    padding: 9px;
+}
+
+.all_projects_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 0 20px 0 20px;
+    justify-content: space-between;
+}
+.all_projects_wrapper > a {
+    padding-right: 10px;
+    width: 49%;
+}
+
+.project_item {
+    width: 100%;
+    height: 350px;
+    margin: 20px 0 20px 0;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #308EA6;
+}
+.project_item > h2 {
+    font-size: 30px;
+    text-align: center;
+    color: #1A4D59;
+    margin-bottom: 20px;
+}
+.project_item > div > h3 {
+    color: #1A4D59;
+    font-size: 22px;
+}
+.project_item > div {
+    color: #D6DDDF;
+    margin: 20px 0 10px 0;
+}
+.project_item > div > p {
+    margin: 5px 0 5px 0;
+    font-size: 20px;
+}
+.project_item:hover {
+    transition: 0.3s;
+    box-shadow: 1px 1px 7px 1px #0A5061;
+}
+.expired {
+    opacity: 0.6;
+}
+.description {
+    font-size: 18px;
+    color: #D6DDDF;
+    text-align: justify;
+}
+.project_lead_name {
+    font-weight: bold;
+    color: #D6DDDF;
+}
+.deadline {
+    font-size: 20px;
+    color: #1A4D59;
+}

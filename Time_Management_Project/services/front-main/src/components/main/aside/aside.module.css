@@ -1,0 +1,22 @@
+aside {
+    background-color: #308EA6;
+}
+
+ul {
+    list-style: none;
+    font-size: 25px;
+}
+
+li {
+    padding: 10px;
+    text-decoration: none;
+    color: #D6DDDF;
+    line-height: 50px;
+    display: block;
+    width: 200px;
+}
+
+li:hover {
+    background-color: #0A5061;
+    transition: 0.25s;
+}

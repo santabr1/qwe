@@ -1,0 +1,63 @@
+.changing_date_item {
+    background-color: #308EA6;
+    margin: 10px auto 20px auto;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+}
+.changing_date_item > button {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: #D6DDDF;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+}
+.changing_date_item > button:hover {
+    background-color: #D6DDDF;
+    color: #0A5061;
+    transition: 0.25s;
+}
+.changing_date_item > button:active {
+    box-shadow: inset 0 0 1px 2px #0A5061;
+    transition: 0s;
+}
+
+.changing_date_item_deadlines {
+    font-size: 22px;
+    color: #0A5061;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.changing_date_item_deadlines > span {
+    color: #D6DDDF;
+    font-size: 25px;
+    margin: 0 40px;
+}
+
+.changing_date_item_causes {
+    font-size: 20px;
+    color: #D6DDDF;
+    padding: 20px 40px;
+    cursor: pointer;
+    white-space: pre-line;
+}
+
+button {
+    margin: 10px 0 20px 0;
+}
+
+textarea {
+    resize: none;
+    font-size: 20px;
+    color: #0A5061;
+    padding: 10px;
+    height: 100px;
+    width: 50%;
+}

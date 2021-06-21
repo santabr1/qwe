@@ -1,0 +1,12 @@
+.add_form {
+    display: flex;
+    flex-direction: row;
+}
+.add_form > button {
+    width: 200px;
+    margin: 0 20px 0 20px;
+}
+
+.add_form > input {
+    margin: 0;
+}

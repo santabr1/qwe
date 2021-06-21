@@ -1,0 +1,1315 @@
+{
+
+  "swagger": "2.0",
+  "info": {
+    "title": "Time Management Project",
+    "description": "Website for tracking the working hours of employees of an IT company",
+    "version": "1.0.0"
+  },
+
+  "host": "localhost:9000",
+  
+  "tags": [
+    {
+      "name": "Developers"
+    },
+    {
+      "name": "Projects"
+    },
+    {
+      "name": "Tasks"
+    },
+    {
+      "name": "Working Time"
+    },
+    {
+      "name": "Notification"
+    },
+    {
+      "name": "Changing Dates"
+    },
+    {
+      "name": "Achievements"
+    }
+  ],
+
+  "schemes": "http",
+
+
+  "paths": {
+    "/developers/get": {
+      "get": {
+        "tags": ["Developers"],
+
+        "summary": "Returns a developer.",
+        "description": "Endpoint to get a developer.",
+        "parameters": [
+           {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "pagSize",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+                 }
+                     }
+              }
+                },
+
+
+    "/developers/get/{id}": {
+      "get": {
+        "tags": ["Developers"],
+        "summary": "Returns a developer by id.",
+        "description": "Endpoint to get a specific developer by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+           {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "pagSize",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+                 }
+                     }
+            }
+                  },                
+
+    "/developers/get_by_task/{id_task}": {
+      "get": {
+        "tags": ["Developers"],
+        "summary": "Returns a developers by task.",
+        "description": "Endpoint to get a developers by task.",
+        "parameters": [
+          {
+            "name": "id_task",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+           {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "pagSize",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/developers/get_by_project/{id_project}": {
+      "get": {
+        "tags": ["Developers"],
+        "summary": "Returns a developers by project.",
+        "description": "Endpoint to get a developers by project.",
+        "parameters": [
+          {
+            "name": "id_project",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+           {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "pagSize",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/developers/update/{id}": {
+      "post": {
+        "tags": ["Developers"],
+        "summary": "Updating information about the developer.",
+        "description": "Endpoint to update information about the developer. name: string, surname: string, patronymic: string, birth: date, email: string",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+
+    "/developers/put-avatar/{id}": {
+      "post": {
+        "tags": ["Developers"],
+        "summary": "Put avatar.",
+        "description": "Endpoint put avatar.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "required": true,
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+"/developers/delete/{id}": {
+      "get": {
+        "tags": ["Developers"],
+        "summary": "Delete developer by id.",
+        "description": "Endpoint to delete a developers by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/developers/count_by_task/{task_id}": {
+      "get": {
+        "tags": ["Developers"],
+        "summary": "Count by task.",
+        "description": "Endpoint count by task.",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/developers/count_by_project/{project_id}": {
+      "get": {
+        "tags": ["Developers"],
+        "summary": "Count by project.",
+        "description": "Endpoint count by project.",
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+
+    "/developers/put": {
+      "post": {
+        "tags": ["Developers"],
+        "summary": "Put developer.",
+        "description": "name: string; surname: string; patronymic: string; birth: date; email: string, position: integer; specialty: integer,isAdmin: boolean; password: string;",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    
+   
+    "/achievements/get_by_developer/{developer_id}": {
+      "get": {
+        "tags": ["Achievements"],
+
+        "summary": "Returns a achievements by developer id.",
+        "description": "Endpoint to get a a achievements by developer id.",
+        "parameters": [
+          {
+            "name": "developer_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+           {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "pagSize",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+                 }
+                     }
+              }
+                },
+    "/achievements/get": {
+      "get": {
+        "tags": ["Achievements"],
+
+        "summary": "Returns achievements.",
+        "description": "Endpoint to get achievements.",
+        "parameters": [
+           {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "pagSize",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+                 }
+                     }
+              }
+                },
+    "/achievements/delete/{achievementsId}": {
+      "get": {
+        "tags": ["Achievements"],
+        "summary": "Delete achievements by id.",
+        "description": "Endpoint to delete  achievements by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/achievements/update/{achievementsId}": {
+      "post": {
+        "tags": ["Achievements"],
+        "summary": "Update achievements by id.",
+        "description": "id: integer; title: string, description: string",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/achievements/put": {
+      "post": {
+        "tags": ["Achievements"],
+        "summary": "Put achievements.",
+        "description": "Endpoint to put achievements. title: string, description: string",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/achievements/change_img/{id}": {
+      "post": {
+        "tags": ["Achievements"],
+        "summary": "Change img achievements.",
+        "description": "Endpoint change img achievements.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "required": true,
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/changing_dates/get/{id_task}": {
+      "get": {
+        "tags": ["Changing Dates"],
+        "summary": "Returns a changing dates by task.",
+        "description": "Endpoint to get a changing dates by task.",
+        "parameters": [
+          {
+            "name": "id_task",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/changing_dates/delete/{changing_date_id}": {
+      "get": {
+        "tags": ["Changing Dates"],
+        "summary": "Delete a changing dates by id.",
+        "description": "Endpoint to delete a changing dates by id.",
+        "parameters": [
+          {
+            "name": "changing_date_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/changing_dates/put": {
+      "post": {
+        "tags": ["Changing Dates"],
+        "summary": "Put changing_dates.",
+        "description": "Endpoint put changing_dates. cause: string; deadlineBefore: date-time; deadlineAfter: date-time; taskId: integer",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/changing_dates/update/{changing_date_id}": {
+      "post": {
+        "tags": ["Changing Dates"],
+        "summary": "Put changing_dates.",
+        "description": "Endpoint put changing_dates. cause: string",
+        "parameters": [
+          {
+            "name": "changing_date_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/notifications/get_all": {
+      "get": {
+        "tags": ["Notification"],
+
+        "summary": "Returns a notifications.",
+        "description": "Endpoint to get a notifications.",
+        "parameters": [
+           {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "pagSize",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+                 }
+                     }
+              }
+                },
+     "/notifications/get/{id_task}": {
+      "get": {
+        "tags": ["Notification"],
+        "summary": "Returns a notification by task.",
+        "description": "Endpoint to get a notification by task.",
+        "parameters": [
+          {
+            "name": "id_task",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "pagSize",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },           
+    "/notifications/get_by_developer/{developer_id}": {
+      "get": {
+        "tags": ["Notification"],
+        "summary": "Returns a notification by developer.",
+        "description": "Endpoint to get a notification by developer.",
+        "parameters": [
+          {
+            "name": "developer_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "pagSize",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/notifications/get/{task_id}": {
+      "get": {
+        "tags": ["Notification"],
+        "summary": "Returns a notification by task.",
+        "description": "Endpoint to get a notification by task.",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "pagSize",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/notifications/all_count": {
+      "get": {
+        "tags": ["Notification"],
+        "summary": "Returns all count by task.",
+        "description": "Endpoint to get all count by task.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/notifications/count/{id_task}": {
+      "get": {
+        "tags": ["Notification"],
+        "summary": "Returns a count by task.",
+        "description": "Endpoint to get a count by task.",
+        "parameters": [
+          {
+            "name": "id_task",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }, 
+    "/notifications/count_by_developer/{developer_id}": {
+      "get": {
+        "tags": ["Notification"],
+        "summary": "Returns a count by developer id.",
+        "description": "Endpoint to get a count by developer id.",
+        "parameters": [
+          {
+            "name": "developer_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }, 
+    "/notifications/delete/{notification_id}": {
+      "get": {
+        "tags": ["Notification"],
+        "summary": "Delete a notification.",
+        "description": "Endpoint to delete a notification.",
+        "parameters": [
+          {
+            "name": "notification_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }, 
+    "/notifications/put_notification": {
+      "post": {
+        "tags": ["Notification"],
+        "summary": "Put a notification.",
+        "description": "Endpoint to put a notification. sender: integer; content: string; date: date-time; taskId: integer",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }, 
+    "/update_notification/{notification_id}": {
+      "post": {
+        "tags": ["Notification"],
+        "summary": "Update a notification.",
+        "description": "Endpoint to update a notification. content: string",
+        "parameters": [
+          {
+            "name": "notification_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+           {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/projects/get": {
+      "get": {
+        "tags": ["Projects"],
+        "summary": "Returns projects.",
+        "description": "Endpoint to get projects.",
+        "parameters": [
+          {
+            "name": "title",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "developer_id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "pagSize",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/projects/get/{id}": {
+      "get": {
+        "tags": ["Projects"],
+        "summary": "Returns project by id.",
+        "description": "Endpoint to get project by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/projects/count": {
+      "get": {
+        "tags": ["Projects"],
+        "summary": "Returns count.",
+        "description": "Endpoint to get count.",
+        "parameters": [
+          {
+            "name": "title",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "developer_id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/projects/check-for-lead/{id}": {
+      "get": {
+        "tags": ["Projects"],
+        "summary": "Check lead.",
+        "description": "Endpoint to check lead.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/projects/put-project": {
+      "post": {
+        "tags": ["Projects"],
+        "summary": "Put project.",
+        "description": "Endpoint to put project. title: string, description: string, deadline: date-time, leadId: integer",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/projects/delete/{id}": {
+      "get": {
+        "tags": ["Projects"],
+        "summary": "Delete projects by id.",
+        "description": "Endpoint to delete a projects by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/projects/update/{id}": {
+      "post": {
+        "tags": ["Projects"],
+        "summary": "Update project.",
+        "description": "Endpoint to update project. title: string, description: string, deadline: date-time, leadId: integer",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/tasks/get/{id_project}": {
+      "get": {
+        "tags": ["Tasks"],
+        "summary": "Returns a tasks by project id.",
+        "description": "Endpoint to get a tasks by project id.",
+        "parameters": [
+          {
+            "name": "id_project",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "title",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "developer_id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+           {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "pagSize",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/tasks/get_single/{id_task}": {
+      "get": {
+        "tags": ["Tasks"],
+        "summary": "Returns a task by id.",
+        "description": "Endpoint to get a task by  id.",
+        "parameters": [
+          {
+            "name": "id_task",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/tasks/count/{id_project}": {
+      "get": {
+        "tags": ["Tasks"],
+        "summary": "Returns a count by project id.",
+        "description": "Endpoint to get a count by project id.",
+        "parameters": [
+          {
+            "name": "id_project",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "title",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "developer_id",
+            "in": "query",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/tasks/delete/{id_task}": {
+      "get": {
+        "tags": ["Tasks"],
+        "summary": "Delete a task.",
+        "description": "Endpoint to delete a task.",
+        "parameters": [
+          {
+            "name": "id_task",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/tasks/get_all": {
+      "get": {
+        "tags": ["Tasks"],
+        "summary": "Get all tasks.",
+        "description": "Endpoint to get all tasks.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/tasks/delete_developer/{id_task}/{developer_id}": {
+      "get": {
+        "tags": ["Tasks"],
+        "summary": "Delete developer from task.",
+        "description": "Endpoint to delete developer from task.",
+        "parameters": [
+          {
+            "name": "id_task",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "developer_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/tasks/add_developer": {
+      "post": {
+        "tags": ["Tasks"],
+        "summary": "Add developer to task.",
+        "description": "Endpoint to add developer to task. developerId: integer, taskId: integer",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+   
+    "/tasks/put": {
+      "post": {
+        "tags": ["Tasks"],
+        "summary": "Put task.",
+        "description": "Endpoint to put task. title: string, description: string, results: string, actualDeadline: date-time, plannedDeadline: date-time, leadId: integer, projectId integer",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/tasks/get_by_developer/{developer_id}": {
+      "get": {
+        "tags": ["Tasks"],
+
+        "summary": "Returns a tasks by developer id.",
+        "description": "Endpoint to get a tasks by developer id.",
+        "parameters": [
+          {
+            "name": "developerId",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+                 }
+                     }
+              }
+                },
+    "/tasks/update/{taskId}": {
+      "post": {
+        "tags": ["Tasks"],
+        "summary": "Update task.",
+        "description": "Endpoint update to task. title: string, description: string, results: string, leadId: integer",
+        "parameters": [
+          {
+            "name": "taskId",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/working_time/get/{developerId}": {
+      "get": {
+        "tags": ["Working Time"],
+        "summary": "Returns working_time by developerId.",
+        "description": "Endpoint to get working_time by developerId.",
+        "parameters": [
+          {
+            "name": "developerId",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "format":"date"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+
+    "/working_time/delete_wt/{wtId}": {
+      "get": {
+        "tags": ["Working Time"],
+        "summary": "Delete working time.",
+        "description": "Endpoint to delete working time.",
+        "parameters": [
+          {
+            "name": "wtId",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+
+    "/working_time/get_for_calendar/:developerId/:monthNum/:yearNum": {
+      "get": {
+        "tags": ["Working Time"],
+        "summary": "Returns working_time for calendar.",
+        "description": "Endpoint to get working_time for calendar.",
+        "parameters": [
+          {
+            "name": "developerId",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "monthNum",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "yearNum",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/working_time/add": {
+      "post": {
+        "tags": ["Working Time"],
+        "summary": "Add working time.",
+        "description": "Endpoint add working time.developerId: integer, taskId: integer, startTime: date-time, endTime: date-time, wtComment: string ",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/working_time/update_status/{wtId}": {
+      "post": {
+        "tags": ["Working Time"],
+        "summary": "Update working time.",
+        "description": "Endpoint update working_time. wtId: integer, status: string",
+        "parameters": [
+          {
+            "name": "wtId",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}

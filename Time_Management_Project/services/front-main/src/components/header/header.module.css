@@ -1,0 +1,12 @@
+header {
+    background-color: #0A5061;
+    color: #D6DDDF;
+}
+
+.header_logo {
+    font-size: 40px;
+    padding: 10px;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    cursor: default;
+}

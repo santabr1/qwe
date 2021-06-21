@@ -1,0 +1,41 @@
+.pagination_wrapper {
+    text-align: center;
+}
+
+.pagination_item {
+    margin: 0 5px;
+}
+
+.pagination_item > a,
+.pagination_item {
+    font-size: 20px;
+    color: #308EA6;
+}
+
+.pagination_item > a:hover {
+    color: #0A5061;
+}
+
+.pagination_item.active > a {
+    color: #0A5061;
+    font-weight: bold;
+}
+
+.arrow {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 70px;
+    text-align: center;
+}
+.arrow.disabled {
+    cursor: initial;
+}
+
+.arrow > .pagination_item:hover {
+    color: #0A5061;
+}
+.arrow.disabled > .pagination_item:hover {
+    color: #308EA6;
+}
