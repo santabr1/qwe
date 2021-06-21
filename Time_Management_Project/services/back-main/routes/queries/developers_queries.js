@@ -506,7 +506,7 @@ const developersQueries = {
             `
         else
             return `
-                select  d.developer_id as developerId,
+                select  distinct d.developer_id as developerId,
                         concat(d.developer_name,' ',d.developer_surname) as developerFullName,
                         d.developer_is_admin as isAdmin
                   from  developers d

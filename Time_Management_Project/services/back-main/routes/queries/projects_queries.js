@@ -47,7 +47,7 @@ const projects_queries = {
                     SELECT  DT.task_id
                       FROM  developers_tasks DT
                      WHERE  DT.developer_id = ${developerId}
-                    )
+                    ) or t.task_lead_id = ${developerId}
             ) or P.project_lead_id = ${developerId})
             LIMIT ${page * pagSize}, ${pagSize}
             ;
@@ -64,7 +64,7 @@ const projects_queries = {
                     SELECT  DT.task_id
                       FROM  developers_tasks DT
                      WHERE  DT.developer_id = ${developerId}
-                )
+                ) or t.task_lead_id = ${developerId}
             ) or P.project_lead_id = ${developerId})
             ;
         `
