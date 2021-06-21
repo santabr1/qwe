@@ -38,13 +38,13 @@ export default function SingleAch({
 
     return <div className={style.single_ach_wrapper}>
         <div style={avatarStyle}>
-            <input
-                id='file'
-                type="file"
-                className={style.file_choicer}
-                onChange={(e) => changeImg(e)}
-            />
-            <label htmlFor="file" className={style.file_choicer_style}>Change photo</label>
+            {/*<input*/}
+            {/*    id='file'*/}
+            {/*    type="file"*/}
+            {/*    className={style.file_choicer}*/}
+            {/*    onChange={(e) => changeImg(e)}*/}
+            {/*/>*/}
+            {/*<label htmlFor="file" className={style.file_choicer_style}>Change photo</label>*/}
         </div>
         <div className={style.ach_info}>
             <h2 className={style.ach_title}>
