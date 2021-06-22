@@ -37,7 +37,7 @@ CREATE TABLE `achievements` (
 
 LOCK TABLES `achievements` WRITE;
 /*!40000 ALTER TABLE `achievements` DISABLE KEYS */;
-INSERT INTO `achievements` VALUES (1,'Новичок','10 часов работы',' '),(2,'Работяга','1000 часов работы',' '),(3,'Легенда','10000 часов работы',' ');
+INSERT INTO `achievements` VALUES (1,'Новичок','10 часов работы',' '),(2,'Работяга123','1000 часов работы',' '),(3,'Легенда','10000 часов работы','http://localhost:9000/ach_img/1624266041673_678x380.jpg');
 /*!40000 ALTER TABLE `achievements` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-21  2:15:57
+-- Dump completed on 2021-06-23  2:29:15
