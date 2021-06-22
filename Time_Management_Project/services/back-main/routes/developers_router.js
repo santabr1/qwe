@@ -4,6 +4,7 @@ const multer = require('multer')
 const {developersQueries} = require('./queries/queries')
 const config = require('../config')
 const {resError, sqlSafeDecorator} = require('../utils/utls')
+const bcrypt = require('bcryptjs')
 
 const developerRouter = Router()
 
@@ -94,7 +95,6 @@ function getQueryManager(email, surname, emailAndSurnameCB, emailCB, surnameCB, 
     if (email && surname) {
         query = emailAndSurnameCB()
     } else {
-
         //Поиск только по email
         if (email) {
             query = emailCB()
@@ -290,7 +290,7 @@ developerRouter.post('/put', (req, res) => {
                 +developerData.position,
                 +developerData.specialty,
                 +developerData.isAdmin,
-                developerData.password,
+                bcrypt.hashSync(developerData.password, 5),
             )(),
             (err) => err
                 ? resError('Failed to put developer', res, err)
@@ -419,9 +419,7 @@ developerRouter.get('/check-by-developer/:email', (req, res) => {
 developerRouter.post('/get_auth', (req, res) => {
     try {
         const email = req.body.email
-        const password = decodeData(req.body.password, keyForPasswords)
         const query = sqlSafeDecorator(developersQueries.getAuth, email)()
-
 
         req.connection.query(
             query,
@@ -429,24 +427,14 @@ developerRouter.post('/get_auth', (req, res) => {
                 try {
                     if (err) {
                         return resError('Failed authorisation', res, err)
-                    }
-                    else {
-                        if (result.length > 0) {
-                            let authCounter = 0
-                            while(authCounter !== 3) {
-                                if (password === decodeData(result[0].developer_password, keyForPasswords)) {
-                                    authCounter = 3
-                                    return res.end(JSON.stringify(result))
-                                } else if(authCounter === 3) {
-                                    return resError('Неверное имя пользователя или пароль', res, err)
-                                } else {
-                                    authCounter++
-                                }
-                            }
+                    } else {
+                        if (result.length > 0 && bcrypt.compareSync(req.body.password, result[0].developer_password)) {
+                            return res.end(JSON.stringify(result))
                         } else {
-                            return res.end(JSON.stringify([]))
+                            return resError('Неверное имя пользователя или пароль', res, err)
                         }
                     }
+
                 } catch (newErr) {
                     console.log(err.stackTrace)
                     return resError('Failed authorisation', res, newErr)
