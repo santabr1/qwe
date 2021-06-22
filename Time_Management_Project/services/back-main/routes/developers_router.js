@@ -40,7 +40,7 @@ function getDevelopersManager(err, res, req, result, errMessage) {
             //Приведение даты рождения к часовому поясу +4 часа у каждого найденного разработчика
             developer.developer_birth = new Date(Date.parse(developer.developer_birth) + 1000 * 60 * 60 * 4)
 
-            developer.developer_avatar_url = developer.developer_avatar_url || `http://35.234.116.28:${config.PORT}/images/avatar.png`
+            developer.developer_avatar_url = developer.developer_avatar_url || `https://34.120.98.225:${config.PORT}/images/avatar.png`
             developer.developer_patronymic = developer.developer_patronymic || ''
 
             //Запросы на получение данных о специальности и позиции разработчика.
@@ -248,7 +248,7 @@ developerRouter.post('/put-avatar/:id', upload.single('image'), (req, res) => {
         const id = +req.params.id
         const imagePath = req.file.path.replace(/public./, '').replace(/\\/, '/').replace(/\\/, '/')
 
-        const query = sqlSafeDecorator(developersQueries.changeAvatarById, id, `http://35.234.116.28:${config.PORT}/` + imagePath)()
+        const query = sqlSafeDecorator(developersQueries.changeAvatarById, id, `https://34.120.98.225:${config.PORT}/` + imagePath)()
 
         req.connection.query(query, err => err
             ? resError('Failed to update avatar image', res, err)

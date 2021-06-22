@@ -82,7 +82,7 @@ tasksRouter.get('/get_single/:task_id', (req, res) => {
                                     reject(err)
                                 } else {
                                     result[0].lead = leadResult[0]
-                                    result[0].lead && (result[0].lead.developer_avatar_url = result[0].lead.developer_avatar_url || `http://35.234.116.28:${config.PORT}/images/avatar.png`)
+                                    result[0].lead && (result[0].lead.developer_avatar_url = result[0].lead.developer_avatar_url || `https://34.120.98.225:${config.PORT}/images/avatar.png`)
                                     resolve()
                                 }
                             }
