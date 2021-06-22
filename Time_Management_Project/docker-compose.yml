@@ -6,7 +6,8 @@ services:
       dockerfile: ./Dockerfile
     image: front
     ports:
-      - "10000:80"
+      - "443:80"
+      - "3000:80"
     container_name: client-app
   nodejs:
     build:
