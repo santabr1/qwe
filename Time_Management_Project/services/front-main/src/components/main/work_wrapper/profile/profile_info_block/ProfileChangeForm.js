@@ -52,7 +52,7 @@ export default function ProfileChangeForm(props) {
         initialValues: initialFormValues,
         validationSchema: validationFormSchema,
         onSubmit(values) {
-            if(values.password.trim().length === 0)
+            if(values.password && values.password.trim().length === 0)
                 values.password = undefined
             onSubmitProfileChange(values)
         }
@@ -140,12 +140,14 @@ export default function ProfileChangeForm(props) {
                     </>
                     : null
             }
-            <input
-                type='password'
-                id='password'
-                autoComplete='off'
-                {...formik.getFieldProps('password')}
-            />
+            {
+                isAdmin && <input
+                    type='password'
+                    id='password'
+                    autoComplete='off'
+                    {...formik.getFieldProps('password')}
+                />
+            }
             <div className={style.change_actions}>
                 <button type='submit' className='primary-btn'>Save</button>
                 <button type='button' onClick={() => setChanging(false)} className={style.back_btn}>Back</button>

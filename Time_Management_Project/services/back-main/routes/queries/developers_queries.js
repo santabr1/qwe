@@ -78,8 +78,8 @@ const developersQueries = {
                             developer_email = ${email},
                             developer_position = ${position},
                             developer_specialty = ${specialty},
-                            developer_is_admin = ${isAdmin},
-                            ${password !== 'NULL' ? `developer_password = ${password}` : ''}
+                            developer_is_admin = ${isAdmin}
+                            ${password !== 'NULL' ? `,developer_password = ${password}` : ''}
                    WHERE    developer_id = ${id}
                    ;
                 `
