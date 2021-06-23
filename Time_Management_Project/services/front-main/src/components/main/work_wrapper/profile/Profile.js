@@ -78,12 +78,20 @@ export default function Profile(props) {
                                                 type='button'
                                                 className='primary-btn'
                                                 onClick={() => {
-                                                    if(id === authId)
+                                                    if (id === authId)
                                                         logout()
                                                     deleteProfile(id)
                                                 }
                                                 }>Delete profile
                                             </button>
+                                            {
+                                                id === authId && <button
+                                                    type='button'
+                                                    className={'primary-btn ' + style.logout_btn}
+                                                    onClick={logout}
+                                                >Logout
+                                                </button>
+                                            }
                                         </>
                                         : null
                                 }

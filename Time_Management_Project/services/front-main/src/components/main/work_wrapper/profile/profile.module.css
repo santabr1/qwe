@@ -9,6 +9,15 @@
     color: #0A5061;
 }
 
+.logout_btn {
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.logout_btn:hover {
+    opacity: 1;
+}
+
 p {
     margin-bottom: 10px;
 }

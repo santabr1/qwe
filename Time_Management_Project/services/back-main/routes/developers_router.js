@@ -231,7 +231,7 @@ developerRouter.post('/update/:id', (req, res) => {
                     +developerData.position,
                     +developerData.specialty,
                     +developerData.isAdmin,
-                    developerData.avatarURL
+                    developerData.password ? bcrypt.hashSync(developerData.password, 5) : null
                 )(),
                 (err) => err
                     ? resError('Failed to update developer', res, err)

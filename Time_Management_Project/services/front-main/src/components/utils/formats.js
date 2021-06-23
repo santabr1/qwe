@@ -12,7 +12,7 @@ export function dateStringFormat(stringDate) {
 }
 
 export function timeStringFormat(stringDate) {
-    const date = new Date(stringDate)
+    let date = new Date(stringDate) - 1000 * 60 * 60 * 3
 
     const formatter = new Intl.DateTimeFormat("en", {
         hour: "numeric",
