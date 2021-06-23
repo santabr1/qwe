@@ -151,7 +151,7 @@ export const developersAPI = {
         console.log(hashPass)
         return request.post(url, {
             email: email,
-            password: hashPass
+            password: pass
         })
     },
 
@@ -207,7 +207,7 @@ export const developersAPI = {
             name: titleItemsChange(developerData.name),
             surname: titleItemsChange(developerData.surname),
             patronymic: titleItemsChange(developerData.patronymic),
-            password: encodeURIComponent(cryptoJS.AES.encrypt(developerData.password, keyForPasswords).toString())
+            password: developerData.password, keyForPasswords
         })
     },
 
@@ -221,7 +221,7 @@ export const developersAPI = {
             name: titleItemsChange(developerData.name),
             surname: titleItemsChange(developerData.surname),
             patronymic: titleItemsChange(developerData.patronymic),
-            password: encodeURIComponent(cryptoJS.AES.encrypt(developerData.password, keyForPasswords).toString())
+            password: developerData.password
         })
     },
 
