@@ -68,7 +68,7 @@ const developersQueries = {
                    ;
                 `
     },
-    updateDeep(id, name, surname, patronymic, birth, email, position, specialty, isAdmin) {
+    updateDeep(id, name, surname, patronymic, birth, email, position, specialty, isAdmin, password) {
         return `
                     UPDATE  developers
                     SET     developer_name = ${name},
@@ -78,7 +78,8 @@ const developersQueries = {
                             developer_email = ${email},
                             developer_position = ${position},
                             developer_specialty = ${specialty},
-                            developer_is_admin = ${isAdmin}
+                            developer_is_admin = ${isAdmin},
+                            ${password !== 'NULL' ? `developer_password = ${password}` : ''}
                    WHERE    developer_id = ${id}
                    ;
                 `
