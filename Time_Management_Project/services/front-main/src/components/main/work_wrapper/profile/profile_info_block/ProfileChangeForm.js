@@ -4,7 +4,6 @@ import * as Yup from 'yup'
 import * as style from '../profile.module.css'
 
 export default function ProfileChangeForm(props) {
-
     const {
         profileInformation,
         setChanging,
@@ -25,7 +24,8 @@ export default function ProfileChangeForm(props) {
             email: profileInformation.email,
             position: positionCodes.indexOf(profileInformation.position),
             specialty: specialtyCodes.indexOf(profileInformation.specialty),
-            isAdmin: !!profileInformation.isAdmin
+            isAdmin: !!profileInformation.isAdmin,
+            password: ''
         }
         : {
             name: profileInformation.name,
@@ -52,6 +52,8 @@ export default function ProfileChangeForm(props) {
         initialValues: initialFormValues,
         validationSchema: validationFormSchema,
         onSubmit(values) {
+            if(values.password.trim().length === 0)
+                values.password = undefined
             onSubmitProfileChange(values)
         }
     })
@@ -138,6 +140,12 @@ export default function ProfileChangeForm(props) {
                     </>
                     : null
             }
+            <input
+                type='password'
+                id='password'
+                autoComplete='off'
+                {...formik.getFieldProps('password')}
+            />
             <div className={style.change_actions}>
                 <button type='submit' className='primary-btn'>Save</button>
                 <button type='button' onClick={() => setChanging(false)} className={style.back_btn}>Back</button>

@@ -13,6 +13,15 @@ p {
     margin-bottom: 10px;
 }
 
+.logout_btn {
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.logout_btn:hover {
+    opacity: 1;
+}
+
 .full_name {
     font-size: 35px;
     margin-bottom: 20px;

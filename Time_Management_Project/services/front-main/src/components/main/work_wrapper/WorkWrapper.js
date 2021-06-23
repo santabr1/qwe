@@ -38,12 +38,17 @@ export default function WorkWrapper(props) {
             {
                 <>
                     <Route path='/profile' exact={true} render={() => <Profile/>}/>
-                    <Route path='/achievements' exact={true} render={() => <AchievementsContainer />}/>
+                    <Route path='/achievements' exact={true} render={ isAdmin
+                        ? () => <AchievementsContainer />
+                        : () => <Redirect to={'/profile'}/>
+                    }/>
                     <Route path='/profile/:id' exact={true} render={() => <Profile />}/>
 
                     <Route path='/projects/:page?' render={() => <Projects />}/>
-                    <Route path='/developers/:page?' render={() => <DevelopersContainer
-                    />}/>
+                    <Route path='/developers/:page?' render={ isAdmin
+                        ? () => <DevelopersContainer />
+                        : () => <Redirect to={'/profile'}/>
+                    }/>
                     <Route path='/time_management' render={() => <TimeManagementContainer
 
                     />}/>
@@ -53,7 +58,6 @@ export default function WorkWrapper(props) {
                         : () => <Redirect to={'/profile'}/>
                     }/>
                     <Route path='/put-project' render={ isAdmin
-
                         ? () => <WorkWithProjectForm
                             onSubmit={onSubmitPutProject}
                             initialValues={initialValuesPutDeveloper}
@@ -75,8 +79,8 @@ export default function WorkWrapper(props) {
 
                     <Route path={`/notifications/:page?`}
                            render={() => <AllNotificationsContainer
-                                rootPath={`/notifications/`}
-                                accessRights={isAdmin}
+                               rootPath={`/notifications/`}
+                               accessRights={isAdmin}
                            />}/>
                 </>
             }
