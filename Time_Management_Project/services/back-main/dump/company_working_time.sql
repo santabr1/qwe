@@ -35,7 +35,7 @@ CREATE TABLE `working_time` (
   KEY `task_id` (`task_id`),
   CONSTRAINT `working_time_ibfk_1` FOREIGN KEY (`developer_id`) REFERENCES `developers` (`developer_id`) ON DELETE CASCADE,
   CONSTRAINT `working_time_ibfk_2` FOREIGN KEY (`task_id`) REFERENCES `tasks` (`task_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,9 +44,28 @@ CREATE TABLE `working_time` (
 
 LOCK TABLES `working_time` WRITE;
 /*!40000 ALTER TABLE `working_time` DISABLE KEYS */;
-INSERT INTO `working_time` VALUES (1,'2020-10-20 09:00:01',NULL,0,'2020-10-20 13:20:01',1,1),(2,'2020-11-01 13:00:05',NULL,0,'2020-11-01 21:30:20',2,3),(3,'2020-11-15 07:00:35',NULL,0,'2020-11-15 10:30:00',2,3);
+INSERT INTO `working_time` VALUES (1,'2020-10-20 09:00:01',NULL,0,'2020-10-20 13:20:01',1,1),(2,'2020-11-01 13:00:05',NULL,0,'2020-11-01 21:30:20',2,3),(3,'2020-11-15 07:00:35',NULL,0,'2020-11-15 10:30:00',2,3),(4,'2021-01-01 11:00:00','comment',0,'2021-01-01 12:00:00',1,1);
 /*!40000 ALTER TABLE `working_time` ENABLE KEYS */;
 UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `wt_time_control_trigger` BEFORE INSERT ON `working_time` FOR EACH ROW BEGIN
+		IF (new.start_time > new.end_time) THEN
+			SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT  = 'MyTriggerError: Trying to insert invalid working time';
+		END IF;
+    END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
@@ -124,4 +143,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-23  2:29:16
+-- Dump completed on 2021-06-23 22:19:02
