@@ -201,7 +201,7 @@ developerRouter.post('/update/:id', (req, res) => {
         const developerData = req.body
 
         //Update для пользователей, не являющихся администраторами.
-        if (Object.keys(developerData).length === 6) {
+        if (Object.keys(developerData).length <= 6) {
             req.connection.query(
                 sqlSafeDecorator(
                     developersQueries.updateSurface,
