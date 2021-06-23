@@ -144,14 +144,11 @@ export const developersAPI = {
     },
 
     getAuth(email, pass) {
-        const hashPass = encodeURIComponent(cryptoJS.AES.encrypt(pass, keyForPasswords).toString())
         const url = `developers/get_auth`
 
-        console.log(email)
-        console.log(hashPass)
         return request.post(url, {
             email: email,
-            password: hashPass
+            password: pass
         })
     },
 
@@ -207,7 +204,7 @@ export const developersAPI = {
             name: titleItemsChange(developerData.name),
             surname: titleItemsChange(developerData.surname),
             patronymic: titleItemsChange(developerData.patronymic),
-            password: encodeURIComponent(cryptoJS.AES.encrypt(developerData.password, keyForPasswords).toString())
+            password: developerData.password
         })
     },
 
@@ -221,7 +218,7 @@ export const developersAPI = {
             name: titleItemsChange(developerData.name),
             surname: titleItemsChange(developerData.surname),
             patronymic: titleItemsChange(developerData.patronymic),
-            password: encodeURIComponent(cryptoJS.AES.encrypt(developerData.password, keyForPasswords).toString())
+            password: developerData.password
         })
     },
 
